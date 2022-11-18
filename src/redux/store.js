@@ -6,7 +6,7 @@ import resultReducer from './result_reducer';
 
 const rootReducer = combineReducers({
     questions : questionReducer,
-    // result : resultReducer
+    result : resultReducer
 })
 
 /** create store with reducer */
