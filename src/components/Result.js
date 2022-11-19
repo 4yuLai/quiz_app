@@ -12,7 +12,7 @@ import { attempts_Number, earnPoints_Number, flagResult } from '../helper/helper
 export default function Result() {
     const dispatch = useDispatch();
 
-    const { questions: {queue, answers}, result: {result, userID}} = useSelector(state => state);
+    const { questions: {queue, answers}, result: {result, userId}} = useSelector(state => state);
 
     const totalPoints = queue.length * 10; 
     const attempts = attempts_Number(result);
@@ -24,13 +24,18 @@ export default function Result() {
         dispatch(resetResultAction());
     }
 
+    useEffect(() => {
+        console.log(userId);
+        console.log(result);
+    });
+
     return (
          <div className='container'>
             <h1 className='title text-light'>Result</h1>
             <div className='result flex-center'>
                 <div className='flex'>
                     <span>username</span>
-                    <span className='bold'>{userID || ""}</span>
+                    <span className='bold'>{userId || ""}</span>
                 </div>
                 <div className='flex'>
                     <span>Total Quiz Points :</span>
