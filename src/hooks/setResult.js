@@ -1,3 +1,4 @@
+import { postServerData } from '../helper/helper';
 import * as Action from '../redux/result_reducer';
 
 export const PushAnswer = (result) => async (dispatch) => {
@@ -7,3 +8,18 @@ export const PushAnswer = (result) => async (dispatch) => {
         console.log(error);
     }
 };
+
+export const usePublishResult = (resultData) => {
+    const { result, username } = resultData;
+    (async () => {
+        try {
+            if (result !== [] && !username) {
+                throw new Error("no result/username")
+            } else {
+                await postServerData(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/result`, resultData, data => data)
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    })();
+}
