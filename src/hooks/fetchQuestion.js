@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import Questions from "../components/Questions";
 import { getServerData } from "../helper/helper";
 import * as Action from "../redux/question_reducer"
 
@@ -22,10 +21,8 @@ export const useFetchQuestion = () => {
         (async () => {
             try {
                 const q = await getServerData(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/questions`,(data) => data)
-                const [{ questions, answers}] = q.q;
-                console.log({ questions, answers });
-
-
+                const [{ questions, answers }] = q.q;
+                
                 if (questions.length > 0) {
                 setGetData((prev) => ({
                 ...prev,

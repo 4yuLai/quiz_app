@@ -1,49 +1,54 @@
 export default [
     {
         id: 1,
-        question : "Javascript is an _______ language",
+        question : "What's the lightest element in the periodic table?",
         options : [
-            'Object-Oriented',
-            'Object-Based',
-            'Procedural',
+            'Helium',
+            'Hydrogen',
+            'Air',
+            'Neutrons',
         ]
     },
     {
         id: 2,
-        question : "Following methods can be used to display data in some form using Javascript",
+        question: "What is the atomic number of carbon?",
         options : [
-            'document.write()',
-            'console.log()',
-            'window.alert()',
+            '2',
+            '6',
+            '12',
+            '14',
         ]
     },
     {
         id: 3,
-        question : "When an operator value is NULL, the typeof returned by the unary operator is:",
+        question: "Which element in the periodic table was named in honour of physicist Albert Einstein?",
         options : [
-            'Boolean',
-            'Undefined',
-            'Object',
+            'Albertium',
+            'Relativium',
+            'Physicsium',
+            'Einsteinium',
         ]
     },
     {
         id: 4,
-        question : "What does the toString() method return?",
+        question: "Which of the following is the newest element to be discovered and synthesised?",
         options : [
-            'Return Object',
-            'Return String',
-            'Return Integer'
+            'Flerovium',
+            'Ununpentium',
+            'Livermorium',
+            'Ununseptium',
         ]
     },
     {
         id: 5,
-        question : "Which function is used to serialize an object into a JSON string?",
+        question: "Which of the following is a noble gas?",
         options : [
-            'stringify()',
-            'parse()',
-            'convert()',
+            'Nitrogen',
+            'Oxygen',
+            'Argon',
+            'Carbon dioxide'
         ]
     }
 ];
 
-export const answers = [0, 1, 2, 1, 0];
+export const answers = [1, 1, 3, 3, 2];

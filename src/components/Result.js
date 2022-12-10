@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import '../styles/Result.css';
 import { Link } from 'react-router-dom';
-import ResultTable from './ResultTable';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -21,17 +20,11 @@ export default function Result() {
     const flag = flagResult(totalPoints, earnPoints);
 
     usePublishResult({ result, username: userId, attempts, points: earnPoints, achived: flag ? "passed" : "failed" });
-    console.log({ result, username: userId, attempts, points: earnPoints, achived: flag? "passed":"failed"});
 
     function onRestart(){
         dispatch(resetAllAction());
         dispatch(resetResultAction());
     }
-
-    useEffect(() => {
-        console.log(userId);
-        console.log(result);
-    });
 
     return (
          <div className='container'>
@@ -59,12 +52,18 @@ export default function Result() {
                 </div>
             </div>
 
-            <div className="start">
-                <Link className='btn' to={'/'} onClick={onRestart}>Restart</Link>
-            </div>
+            <div className='flex'> 
+                <div className="start">
+                    <Link className='btn' to={'/'} onClick={onRestart}>Restart</Link>
+                </div>
 
-            <div className="container">
-                <ResultTable />
+                <div className="start">
+                    <Link className='btn' to={'/answer'}>Review</Link>
+                </div>
+
+                <div className="start">
+                    <Link className='btn' to={'/board'} onClick={onRestart}>Board</Link>
+                </div>
             </div>
         </div>
     )

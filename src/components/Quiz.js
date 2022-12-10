@@ -5,8 +5,6 @@ import { PushAnswer } from '../hooks/setResult';
 import { Navigate } from 'react-router-dom';
 import Questions from './Questions';
 
-
-
 export default function Quiz() {
     const [check, setChecked] = useState(undefined);
     const dispatch = useDispatch();
@@ -17,22 +15,7 @@ export default function Quiz() {
     const trace = questions.trace;
     const queue = questions.queue;
 
-    useEffect(() => {
-        console.log(trace);
-    });
-
-    useEffect(() => {
-        console.log(questions);
-    });
-
-    useEffect(() => {
-        console.log(result.result);
-    })
-
-    useEffect(() => {
-        console.log(queue);
-    });
-
+    // next question (final one => sumbit)
     function onNext() {
         dispatch(moveNextAction());
         if (result.result.length <= trace) {
@@ -41,14 +24,17 @@ export default function Quiz() {
         setChecked(undefined);
     }
 
+    // prev question
     function onPrev() {
         dispatch(movePrevAction());
     }
 
+    // checked
     function onChecked(check) {
         setChecked(check);
     }
 
+    // link to result page
     if (result.result.length && result.result.length >= queue.length) {
       return (
         <Navigate
@@ -60,9 +46,8 @@ export default function Quiz() {
 
     return (
     <div className='container'>
-        <h1 className='title text-light'>Quiz Application</h1>
+            <h1 className='title text-light'>Question {trace + 1} / {queue.length}</h1>
 
-        {/* display questions */}
             <Questions onChecked={onChecked} />
 
         <div className='grid'>

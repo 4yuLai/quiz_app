@@ -1,10 +1,8 @@
-
-
 .flex-center{
     display: flex;
     justify-content: center;    
     flex-direction: column;
-    border: 1px solid #cecece;
+    border: 1px solid #000000;
     padding: 3em 4em;
     gap: 1em;
 }
@@ -17,7 +15,7 @@
 
 .container .flex span {
     font-size: 1.4em;
-    color: #cecece;
+    color: #000000;
 }
 
 .container .flex span.achive {
@@ -46,6 +44,3 @@ table {
     padding: 18px 0;
 }
 
-.table-header > tr > td{
-    border: 1px solid #faff5a;   
-}

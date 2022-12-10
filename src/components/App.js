@@ -7,6 +7,8 @@ import {
 import Main from './Main';
 import Quiz from './Quiz';
 import Result from './Result';
+import Board from './Board';
+import Answer from './Answer';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
   {
     path: '/result',
     element: <Result />
+  },
+  {
+    path: '/answer',
+    element: <Answer />
+  },
+  {
+    path: '/board',
+    element: <Board />
   },
 ]);
 
